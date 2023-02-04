@@ -23,6 +23,10 @@ const App = () => {
     setCount(0);
   };
 
+  const double = () => {
+    setCount(count * 2);
+  };
+
   return (
     // <></>で囲ってもok
     <React.Fragment>
@@ -37,6 +41,7 @@ const App = () => {
       </div>
       <div>
         <button onClick={reset}>Reset</button>
+        <button onClick={double}>*2</button>
       </div>
     </React.Fragment>
   );
