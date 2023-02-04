@@ -27,6 +27,11 @@ const App = () => {
     setCount(count * 2);
   };
 
+  const divide3 = () =>
+    setCount((previousCount) =>
+      previousCount % 3 === 0 ? previousCount / 3 : previousCount
+    );
+
   return (
     // <></>で囲ってもok
     <React.Fragment>
@@ -42,6 +47,7 @@ const App = () => {
       <div>
         <button onClick={reset}>Reset</button>
         <button onClick={double}>*2</button>
+        <button onClick={divide3}>3の倍数の時だけ3でわる</button>
       </div>
     </React.Fragment>
   );
