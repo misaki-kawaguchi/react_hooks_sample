@@ -19,6 +19,10 @@ const App = () => {
     setCount((previousCount) => previousCount - 1);
   };
 
+  const reset = () => {
+    setCount(0);
+  };
+
   return (
     // <></>で囲ってもok
     <React.Fragment>
@@ -30,6 +34,9 @@ const App = () => {
       <div>
         <button onClick={increment2}>+1</button>
         <button onClick={decrement2}>+1</button>
+      </div>
+      <div>
+        <button onClick={reset}>Reset</button>
       </div>
     </React.Fragment>
   );
