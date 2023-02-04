@@ -7,11 +7,16 @@ const App = () => {
     setCount(count + 1);
   };
 
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
   return (
     // <></>で囲ってもok
     <React.Fragment>
       <div>count:{count}</div>
       <button onClick={increment}>+1</button>
+      <button onClick={decrement}>-1</button>
     </React.Fragment>
   );
 };
