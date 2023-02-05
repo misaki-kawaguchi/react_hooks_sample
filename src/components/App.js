@@ -22,8 +22,6 @@ const App = () => {
     setBody("")
   }
 
-  console.log(state)
-
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
@@ -67,18 +65,31 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          {state.map((event, index) => (
-            <tr key={index}>
-              <td>{event.id}</td>
-              <td>{event.title}</td>
-              <td>{event.body}</td>
-              <td>
-                <button type="button" className="btn btn-danger">
-                  削除
-                </button>
-              </td>
-            </tr>
-          ))}
+          {state.map((event, index) => {
+            const id = event.id
+            const handleClickDeleteButton = () => {
+              dispatch({
+                type: "DELETE_EVENT",
+                id: id,
+              })
+            }
+            return (
+              <tr key={index}>
+                <td>{id}</td>
+                <td>{event.title}</td>
+                <td>{event.body}</td>
+                <td>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={handleClickDeleteButton}
+                  >
+                    削除
+                  </button>
+                </td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

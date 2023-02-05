@@ -10,8 +10,8 @@ const events = (state = [], action) => {
       // eventsの最後にeventを追加する
       return [...state, { id, ...event }]
     case "DELETE_EVENT":
-      return state
-    case "CREATE_ALL_EVENTS":
+      return state.filter((event) => event.id !== action.id)
+    case "DELETE_ALL_EVENTS":
       return []
     default:
       return state
