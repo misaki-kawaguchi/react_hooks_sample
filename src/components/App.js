@@ -63,7 +63,11 @@ const App = () => {
         >
           イベントを作成する
         </button>
-        <button className="btn btn-danger" onClick={deleteAllEvents}>
+        <button
+          className="btn btn-danger"
+          onClick={deleteAllEvents}
+          disabled={state.length === 0}
+        >
           全てのイベントを削除する
         </button>
       </form>
