@@ -6,13 +6,11 @@ import reducer from "../reducers"
 
 const App = () => {
   // 状態遷移したいタイミングでdispatchを呼んで、dispatchの引数にactionを渡す。[]を初期値とする。
-  // App.jsのstateとEventFormのstateは別物になっている
   const [state, dispatch] = useReducer(reducer, [])
-  console.log(state, "in App.js")
 
   return (
     <div className="container-fluid">
-      <EventForm />
+      <EventForm state={state} dispatch={dispatch} />
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>

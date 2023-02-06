@@ -1,12 +1,8 @@
-import React, { useReducer, useState } from "react"
-import reducer from "../reducers"
+import React, { useState } from "react"
 
-const EventForm = () => {
-  // 状態遷移したいタイミングでdispatchを呼んで、dispatchの引数にactionを渡す。[]を初期値とする。
-  const [state, dispatch] = useReducer(reducer, [])
+const EventForm = ({ state, dispatch }) => {
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
-  console.log(state, "in EventForm.js")
 
   const addEvent = (e) => {
     // ページをリロードしないようにする
