@@ -8,8 +8,11 @@ import reducer from "../reducers"
 console.log({ AppContext })
 
 const App = () => {
+  const initialState = {
+    events: [],
+  }
   // 状態遷移したいタイミングでdispatchを呼んで、dispatchの引数にactionを渡す。[]を初期値とする。
-  const [state, dispatch] = useReducer(reducer, [])
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
